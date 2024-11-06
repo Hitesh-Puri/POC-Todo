@@ -16,7 +16,7 @@ const App = () => {
     const fetchTasks = async () => {
       try {
         const response = await axios.get(
-          "https://transcript-app-management-portal-service.azurewebsites.net/api/Task"
+          "https://usermanagementportalfrontend-gpgegxbqcbgncngz.canadacentral-01.azurewebsites.net/api/Task"
         );
         setTasks(response.data); // assuming response data is already an array of tasks
       } catch (error) {
@@ -38,7 +38,7 @@ const App = () => {
   const handleCreateTask = async () => {
     try {
       const response = await axios.post(
-        "https://transcript-app-management-portal-service.azurewebsites.net/api/Task",
+        "https://usermanagementportalfrontend-gpgegxbqcbgncngz.canadacentral-01.azurewebsites.net/api/Task",
         {
           id: new Date(),
           title: newTask.title,
@@ -62,7 +62,7 @@ const App = () => {
   const handleSaveTask = async (task) => {
     try {
       await axios.put(
-        `https://transcript-app-management-portal-service.azurewebsites.net/api/Task/${task.id}`,
+        `https://usermanagementportalfrontend-gpgegxbqcbgncngz.canadacentral-01.azurewebsites.net/api/Task/${task.id}`,
         {
           id: `${task.id}`,
           title: task.title,
@@ -81,7 +81,7 @@ const App = () => {
   const handleDeleteTask = async (id) => {
     try {
       await axios.delete(
-        `https://transcript-app-management-portal-service.azurewebsites.net/api/Task/${id}`
+        `https://usermanagementportalfrontend-gpgegxbqcbgncngz.canadacentral-01.azurewebsites.net/api/Task/${id}`
       );
       setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
     } catch (error) {

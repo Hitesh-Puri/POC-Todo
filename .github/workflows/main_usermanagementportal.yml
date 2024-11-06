@@ -6,7 +6,7 @@ name: Build and deploy Node.js app to Azure Web App - UserManagementPortal
 on:
   push:
     branches:
-      - mainly
+      - main
   workflow_dispatch:
 
 jobs:
