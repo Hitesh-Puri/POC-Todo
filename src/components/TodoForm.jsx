@@ -8,7 +8,7 @@ const TodoForm = ({ onCreate }) => {
 
   const handleSubmit = () => {
     if (title && description) {
-      onCreate({ title, description, completed: false });
+      onCreate({ title, description, isCompleted: false });
       setTitle("");
       setDescription("");
     }

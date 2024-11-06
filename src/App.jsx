@@ -55,7 +55,7 @@ const App = () => {
     if (todoToUpdate) {
       const updatedFields = {
         ...todoToUpdate,
-        completed: !todoToUpdate.completed,
+        isCompleted: !todoToUpdate.isCompleted,
       };
       await updateTodo(id, updatedFields);
       setTodos(todos.map((todo) => (todo.id === id ? updatedFields : todo)));

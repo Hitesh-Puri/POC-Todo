@@ -25,9 +25,7 @@ const TodoTable = ({ todos, onEdit, onDelete, onSave, onToggleComplete }) => {
           <th style={{ padding: "10px", border: "1px solid #ddd" }}>
             Description
           </th>
-          <th style={{ padding: "10px", border: "1px solid #ddd" }}>
-            Is Completed
-          </th>
+          <th style={{ padding: "10px", border: "1px solid #ddd" }}>Status</th>
           <th style={{ padding: "10px", border: "1px solid #ddd" }}>Actions</th>
         </tr>
       </thead>
@@ -35,7 +33,9 @@ const TodoTable = ({ todos, onEdit, onDelete, onSave, onToggleComplete }) => {
         {todos.map((todo) => (
           <tr
             key={todo.id}
-            style={{ textDecoration: todo.completed ? "line-through" : "none" }}
+            style={{
+              textDecoration: todo.isCompleted ? "line-through" : "none",
+            }}
           >
             {/* <td style={{ padding: "10px", border: "1px solid #ddd" }}>
               {todo.id}
@@ -75,7 +75,7 @@ const TodoTable = ({ todos, onEdit, onDelete, onSave, onToggleComplete }) => {
             >
               <input
                 type="checkbox"
-                checked={todo.completed}
+                checked={todo.isCompleted}
                 onChange={() => onToggleComplete(todo.id)}
                 style={{ cursor: "pointer" }}
               />
